@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>USC Fitness Hub</title>
+  <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+
+  <!-- Internal CSS (layout helpers + cards) -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #fff;
+      border-bottom: 2px solid #ccc;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #73000a;
+    }
+    nav a:hover { text-decoration: underline; }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      background-color: #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    footer {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 2px solid #ccc;
+    }
+    .back-to-top {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #73000a;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .back-to-top:hover { background-color: #990000; }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+    <header>
+      <h1>USC Fitness Hub</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="section.html">Workouts</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="off-campus.html">Off-Campus</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+    <!-- FORMS -->
+    <section id="forms">
+      <h2 style="text-align:center;">Feedback & Assessment Forms</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Fitness Assessment</h3>
+          <form>
+            <label>Name *</label><input type="text">
+            <label>Email *</label><input type="email">
+            <label>Goals</label>
+            <input type="checkbox"> Build Muscle
+            <input type="checkbox"> Lose Weight
+            <input type="checkbox"> Endurance
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Feedback Form</h3>
+          <form>
+            <label>Name *</label><input type="text">
+            <label>Email *</label><input type="email">
+            <label>Comments</label><textarea></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+     <!-- FOOTER -->
+  <footer id="footer">
+  <div style="max-width:1200px; margin:auto; padding:20px; text-align:center;">
+    <!-- Changed text color to black -->
+    <p style="color:#000;"><strong>USC Fitness Hub</strong> | University of South Carolina</p>
+    
+    <!-- Internal Site Links -->
+    <nav style="margin: 10px 0;">
+      <a href="#home" style="margin:0 10px; color:#73000a; text-decoration:none;">Home</a>
+      <a href="#gyms" style="margin:0 10px; color:#73000a; text-decoration:none;">Gyms</a>
+      <a href="#nutrition" style="margin:0 10px; color:#73000a; text-decoration:none;">Nutrition</a>
+      <a href="#calculator" style="margin:0 10px; color:#73000a; text-decoration:none;">Calculator</a>
+      <a href="#forms" style="margin:0 10px; color:#73000a; text-decoration:none;">Forms</a>
+    </nav>
+
+    <!-- External Links -->
+    <div style="margin: 10px 0;">
+      <a href="https://sc.edu/about/offices_and_divisions/campus_recreation/" target="_blank" style="margin:0 10px; color:#555;">USC Campus Recreation</a>
+      <a href="https://sc.edu/about/offices_and_divisions/housing/dining/" target="_blank" style="margin:0 10px; color:#555;">USC Dining</a>
+      <a href="https://www.columbiaymca.org/" target="_blank" style="margin:0 10px; color:#555;">Columbia YMCA</a>
+    </div>
+
+    <!-- Changed text color to black -->
+    <p style="margin-top:10px; color:#000;">&copy; 2025 USC Fitness Hub. Created as a student project for educational purposes.</p>
+
+    <!-- Back to Top -->
+    <a href="#top" class="back-to-top">⬆ Back to Top</a>
+  </div>
+</footer>
+</body>
