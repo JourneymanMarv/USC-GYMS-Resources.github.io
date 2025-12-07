@@ -1,5 +1,6 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>USC Fitness Hub</title>
@@ -11,6 +12,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
     }
+
     header {
       background-color: #fff;
       border-bottom: 2px solid #ccc;
@@ -19,42 +21,54 @@
       top: 0;
       z-index: 1000;
     }
+
     nav a {
       margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
       color: #73000a;
     }
-    nav a:hover { text-decoration: underline; }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     .card {
       border: 1px solid #ddd;
       border-radius: 12px;
       padding: 20px;
       background-color: #fff;
       margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
+
     .three-col {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 16px;
     }
-    input, select, textarea {
+
+    input,
+    select,
+    textarea {
       width: 100%;
       padding: 8px;
       border: 1px solid #ccc;
       border-radius: 6px;
     }
+
     label {
       font-weight: bold;
       display: block;
       margin-top: 10px;
     }
+
     footer {
       background-color: #f0f0f0;
       text-align: center;
@@ -62,6 +76,7 @@
       margin-top: 40px;
       border-top: 2px solid #ccc;
     }
+
     .back-to-top {
       display: inline-block;
       margin-top: 10px;
@@ -72,13 +87,46 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .back-to-top:hover { background-color: #990000; }
+
+    .back-to-top:hover {
+      background-color: #990000;
+    }
+
     img {
       max-width: 100%;
       border-radius: 8px;
     }
+
+    /* Optional: container + grid if not already in styles.css */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    button {
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background-color: #73000a;
+      color: #fff;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    button#reset-btn {
+      background-color: #999;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <h1 style="margin:0; color:#73000a;">USC Fitness Hub</h1>
@@ -91,77 +139,161 @@
       <a href="calculator.html">Calculator</a>
       <a href="feedback.html">Forms</a>
     </nav>
-
-
+  </header>
 
   <div class="container">
- <!-- CALCULATOR -->
+    <!-- CALCULATOR -->
     <section id="calculator" class="calculator-section">
-  <h2>Fitness Calculator</h2>
-  <p class="subtitle">Enter your info below to get tailored calorie and protein goals.</p>
+      <h2>Fitness Calculator</h2>
+      <p class="subtitle">Enter your info below to get tailored calorie and protein goals.</p>
 
-  <div class="calc-grid">
-    <!-- Form -->
-    <div class="card">
-      <h3>Personal Information</h3>
-      <form id="calc-form">
-        <label>Height (ft)</label>
-        <input type="number" id="height" placeholder="5.10">
-        
-        <label>Weight (lbs)</label>
-        <input type="number" id="weight" placeholder="160">
-        
-        <label>Age</label>
-        <input type="number" id="age" placeholder="20">
-        
-        <label>Gender</label>
-        <select id="gender">
-          <option>Male</option>
-          <option>Female</option>
-        </select>
-        
-        <label>Activity Level</label>
-        <select id="activity">
-          <option value="1.2">Sedentary</option>
-          <option value="1.375">Lightly Active</option>
-          <option value="1.55">Moderately Active</option>
-          <option value="1.725">Very Active</option>
-        </select>
-        
-        <label>Goal</label><br>
-        <input type="radio" name="goal" value="lose"> Lose Weight
-        <input type="radio" name="goal" value="maintain" checked> Maintain
-        <input type="radio" name="goal" value="gain"> Gain
-        <br><br>
-        
-        <button type="submit">Calculate</button>
-        <button type="reset" id="reset-btn">Reset</button>
-      </form>
-    </div>
+      <div class="calc-grid">
+        <!-- Form -->
+        <div class="card">
+          <h3>Personal Information</h3>
+          <form id="calc-form">
+            <label>Height (ft)</label>
+            <input type="number" id="height" step="0.01" placeholder="5.10">
+
+            <label>Weight (lbs)</label>
+            <input type="number" id="weight" step="0.1" placeholder="160">
+
+            <label>Age</label>
+            <input type="number" id="age" placeholder="20">
+
+            <label>Gender</label>
+            <select id="gender">
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+
+            <label>Activity Level</label>
+            <select id="activity">
+              <option value="1.2">Sedentary</option>
+              <option value="1.375">Lightly Active</option>
+              <option value="1.55">Moderately Active</option>
+              <option value="1.725">Very Active</option>
+            </select>
+
+            <label>Goal</label><br>
+            <input type="radio" name="goal" value="lose"> Lose Weight
+            <input type="radio" name="goal" value="maintain" checked> Maintain
+            <input type="radio" name="goal" value="gain"> Gain
+            <br><br>
+
+            <button type="submit">Calculate</button>
+            <button type="reset" id="reset-btn">Reset</button>
+          </form>
+        </div>
+
+        <!-- RESULTS CARD -->
+        <div class="card" id="results-card" style="display:none;">
+          <h3>Your Results</h3>
+          <p id="calories-output"></p>
+          <p id="protein-output"></p>
+        </div>
+      </div>
+    </section>
   </div>
 
-   <!-- FOOTER -->
-   <footer id="footer">
-  <div style="max-width:1200px; margin:auto; padding:20px; text-align:center;">
-    <!-- Changed text color to black -->
-    <p style="color:#000;"><strong>USC Fitness Hub</strong> | University of South Carolina</p>
-    
-    <!-- Internal Site Links -->
-    <nav style="margin: 10px 0;">
-      <a href="index.html" style="margin:0 10px; color:#73000a; text-decoration:none;">Home</a>
-      <a href="off-campus.html" style="margin:0 10px; color:#73000a; text-decoration:none;">Off-campus Gyms</a>
-      <a href="on-campus.html" style="margin:0 10px; color:#73000a; text-decoration:none;">On-campus Gyms</a>
-      <a href="nutrition.html" style="margin:0 10px; color:#73000a; text-decoration:none;">Nutrition</a>
-      <a href="calculator.html" style="margin:0 10px; color:#73000a; text-decoration:none;">Calculator</a>
-      <a href="feedback.html" style="margin:0 10px; color:#73000a; text-decoration:none;">Forms</a>
-    </nav>
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div style="max-width:1200px; margin:auto; padding:20px; text-align:center;">
+      <p style="color:#000;"><strong>USC Fitness Hub</strong> | University of South Carolina</p>
+      <nav style="margin: 10px 0;">
+        <a href="index.html" style="margin:0 10px; color:#73000a; text-decoration:none;">Home</a>
+        <a href="off-campus.html" style="margin:0 10px; color:#73000a; text-decoration:none;">Off-campus Gyms</a>
+        <a href="on-campus.html" style="margin:0 10px; color:#73000a; text-decoration:none;">On-campus Gyms</a>
+        <a href="nutrition.html" style="margin:0 10px; color:#73000a; text-decoration:none;">Nutrition</a>
+        <a href="calculator.html" style="margin:0 10px; color:#73000a; text-decoration:none;">Calculator</a>
+        <a href="feedback.html" style="margin:0 10px; color:#73000a; text-decoration:none;">Forms</a>
+      </nav>
 
-    <!-- External Links -->
-    <div style="margin: 10px 0;">
-      <a href="https://sc.edu/about/offices_and_divisions/campus_recreation/" target="_blank" style="margin:0 10px; color:#555;">USC Campus Recreation</a>
-      <a href="https://sc.edu/about/offices_and_divisions/housing/dining/" target="_blank" style="margin:0 10px; color:#555;">USC Dining</a>
-      <a href="https://www.columbiaymca.org/" target="_blank" style="margin:0 10px; color:#555;">Columbia YMCA</a>
+      <div style="margin: 10px 0;">
+        <a href="https://sc.edu/about/offices_and_divisions/campus_recreation/" target="_blank"
+          style="margin:0 10px; color:#555;">USC Campus Recreation</a>
+        <a href="https://sc.edu/about/offices_and_divisions/housing/dining/" target="_blank"
+          style="margin:0 10px; color:#555;">USC Dining</a>
+        <a href="https://www.columbiaymca.org/" target="_blank" style="margin:0 10px; color:#555;">Columbia YMCA</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
+
+  <!-- JAVASCRIPT FOR CALCULATOR -->
+  <script>
+    const form = document.getElementById('calc-form');
+    const resultsCard = document.getElementById('results-card');
+    const caloriesOutput = document.getElementById('calories-output');
+    const proteinOutput = document.getElementById('protein-output');
+    const resetBtn = document.getElementById('reset-btn');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get values
+      const heightFeet = parseFloat(document.getElementById('height').value);
+      const weightLbs = parseFloat(document.getElementById('weight').value);
+      const age = parseInt(document.getElementById('age').value, 10);
+      const gender = document.getElementById('gender').value;
+      const activityFactor = parseFloat(document.getElementById('activity').value);
+      const goalRadio = document.querySelector('input[name="goal"]:checked');
+
+      // Basic validation
+      if (isNaN(heightFeet) || isNaN(weightLbs) || isNaN(age) || !goalRadio) {
+        alert("Please fill out all fields to calculate your goals.");
+        return;
+      }
+
+      const goal = goalRadio.value;
+
+      // Convert height in feet (e.g., 5.10) to inches
+      const heightInches = heightFeet * 12;
+
+      // Harris-Benedict BMR in imperial units
+      let bmr;
+      if (gender === "Male") {
+        bmr = 66 + (6.23 * weightLbs) + (12.7 * heightInches) - (6.8 * age);
+      } else {
+        bmr = 655 + (4.35 * weightLbs) + (4.7 * heightInches) - (4.7 * age);
+      }
+
+      // TDEE (Total Daily Energy Expenditure)
+      let tdee = bmr * activityFactor;
+
+      // Adjust based on goal
+      let goalCalories = tdee;
+      if (goal === "lose") {
+        goalCalories = tdee - 500;   // ~1 lb loss per week
+      } else if (goal === "gain") {
+        goalCalories = tdee + 250;   // gentle surplus
+      }
+
+      // Safety floor
+      if (goalCalories < 1200) {
+        goalCalories = 1200;
+      }
+
+      // Protein goal: 0.8–1.0 g per lb
+      const proteinLower = weightLbs * 0.8;
+      const proteinUpper = weightLbs * 1.0;
+
+      // Display results
+      caloriesOutput.textContent =
+        `Estimated daily calories for your goal: ${goalCalories.toFixed(0)} kcal/day.`;
+
+      proteinOutput.textContent =
+        `Suggested daily protein: ${proteinLower.toFixed(0)}–${proteinUpper.toFixed(0)} grams per day.`;
+
+      resultsCard.style.display = 'block';
+    });
+
+    // Reset button clears results
+    resetBtn.addEventListener('click', function () {
+      resultsCard.style.display = 'none';
+      caloriesOutput.textContent = '';
+      proteinOutput.textContent = '';
+    });
+  </script>
 </body>
+
+</html>
